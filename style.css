@@ -1,7 +1,7 @@
 body {
 background-color: rgb(238, 144, 196);
 
-transition: background-color 1s;
+transition: background-color .5s;
 }
 
 /* Using flex with the column direction to
