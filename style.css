@@ -1,5 +1,5 @@
 body {
-background-color: lightgreen;
+background-color: rgb(238, 144, 196);
 
 transition: background-color .5s;
 }
