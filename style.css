@@ -1,7 +1,6 @@
 body {
 background-color: lightgreen;
 
-/* Smoothly transition the background color */
 transition: background-color .5s;
 }
 
@@ -29,7 +28,7 @@ height: 250px;
 width: 250px;
 background-image: URL(
 	"https://images.unsplash.com/photo-1612172914649-26000db6568e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80");
-);
+;
 background-size: cover;
 background-position: center;
 border-radius: 15%;
