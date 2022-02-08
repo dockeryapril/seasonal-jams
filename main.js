@@ -27,8 +27,8 @@ let track_list = [
 {
 	name: "Where I Belong",
 	artist: "Kiri T",
-	image: "Image URL",
-	path: "Night_Owl.mp3"
+	image: "https://images.unsplash.com/photo-1518414881329-0f96c8f2a924?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2978&q=80",
+	path: "Where-I-Belong.wav"
 },
 {
 	name: "Enthusiast",
