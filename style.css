@@ -1,140 +1,132 @@
-body {
-background-color: rgb(238, 144, 196);
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
-transition: background-color .5s;
+*{
+    box-sizing: border-box;
 }
 
-/* Using flex with the column direction to
-align items in a vertical direction */
-.player {
-height: 95vh;
-display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: center;
+body{
+    height: 100vh;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    /*background-image: linear-gradient(
+    0deg,
+    rgba(247, 247, 247, 1) 23.8%,
+    rgba(252, 221, 221, 1) 92%
+  );*/
+    background-image: linear-gradient(0deg, rgba(251,252,13,1) 23.8%, rgba(255,170,1,0.99) 92%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.details {
-display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: center;
-margin-top: 25px;
+.audio-container{
+    background-color: #000;
+    border-radius: 15px;
+    box-shadow: 0 20px 20px 0 rgb(247, 148, 1);
+    display: flex;
+    padding: 20px 30px;
+    position: relative;
+    margin: 100px 0;
+    z-index: 10;
 }
 
-.track-art {
-margin: 25px;
-height: 250px;
-width: 250px;
-background-image: URL(
-	"https://images.unsplash.com/photo-1612172914649-26000db6568e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80");
-;
-background-size: cover;
-background-position: center;
-border-radius: 15%;
-}
+.img-container {
+    position: relative;
+    width: 110px;
+  }
 
-/* Changing the font sizes to suitable ones */
-.now-playing {
-font-size: 1rem;
-}
+  .img-container img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 110px;
+    width: inherit;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+    
+  }
 
-.track-name {
-font-size: 3rem;
-}
+  .audio-container.play .img-container img {
+    animation-play-state: running;
+  }
 
-.track-artist {
-font-size: 1.5rem;
-}
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
-/* Using flex with the row direction to
-align items in a horizontal direction */
-.buttons {
-display: flex;
-flex-direction: row;
-align-items: center;
-}
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  
+  .action-btn {
+    background-color: #000;
+    border: 0;
+    color: #f7be04;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+  }
 
-.playpause-track,
-.prev-track,
-.next-track {
-padding: 25px;
-opacity: 0.8;
 
-/* Smoothly transition the opacity */
-transition: opacity .2s;
-}
+  .action-btn.action-btn-big {
+    color: #fcb51b;
+    font-size: 30px;
+  }
 
-/* Change the opacity when mouse is hovered */
-.playpause-track:hover,
-.prev-track:hover,
-.next-track:hover {
-opacity: 1.0;
-}
+  .action-btn:focus {
+    outline: 0;
+  }
 
-/* Define the slider width so that it scales properly */
-.slider_container {
-width: 75%;
-max-width: 400px;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-/* Modify the appearance of the slider */
-.seek_slider, .volume_slider {
--webkit-appearance: none;
--moz-appearance: none;
-appearance: none;
-height: 5px;
-background: black;
-opacity: 0.7;
--webkit-transition: .2s;
-transition: opacity .2s;
-}
-
-/* Modify the appearance of the slider thumb */
-.seek_slider::-webkit-slider-thumb,
-.volume_slider::-webkit-slider-thumb {
--webkit-appearance: none;
--moz-appearance: none;
-appearance: none;
-width: 15px;
-height: 15px;
-background: white;
-cursor: pointer;
-border-radius: 50%;
-}
-
-/* Change the opacity when mouse is hovered */
-.seek_slider:hover,
-.volume_slider:hover {
-opacity: 1.0;
-}
-
-.seek_slider {
-width: 60%;
-}
-
-.volume_slider {
-width: 30%;
-}
-
-.current-time,
-.total-duration {
-padding: 10px;
-}
-
-i.fa-volume-down,
-i.fa-volume-up {
-padding: 10px;
-}
-
-/* Change the mouse cursor to a pointer
-when hovered over */
-i.fa-play-circle,
-i.fa-pause-circle,
-i.fa-step-forward,
-i.fa-step-backward {
-cursor: pointer;
-}
+  .audio-info {
+    background-color: rgb(255, 166, 0);
+    border-radius: 15px 15px 0 0;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: calc(100% - 40px);
+    padding: 10px 10px 10px 150px;
+    opacity: 0;
+    transform: translateY(0%);
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+    z-index: 0;
+  }
+  
+  .audio-container.play .audio-info {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+  
+  .audio-info h4 {
+    margin: 0;
+  }
+  
+  .progress-container {
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 4px;
+    width: 100%;
+  }
+  
+  .progress {
+    background-color: #000;
+    border-radius: 5px;
+    height: 100%;
+    width: 50%;
+    transition: width 0.1s linear;
+  }
