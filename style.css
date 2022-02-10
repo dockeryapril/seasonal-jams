@@ -112,7 +112,7 @@ body {
 }
   
 .progress-container {
-      background: #fff;
+      background: rgb(205, 238, 21);
       border-radius: 5px;
       cursor: pointer;
       margin: 10px 0;
