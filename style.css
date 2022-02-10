@@ -123,8 +123,6 @@ body {
       transition: width 0.1s linear;
 }
 
-
-
 @keyframes move-background {
     from {
           -webkit-transform: translate3d(0px, 0px, 0px);
@@ -169,7 +167,7 @@ body {
   }
   
   .stars {
-   background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+   background: rgb(66, 1, 1) url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
    position: absolute;
       top: 0;
       bottom: 0;
@@ -190,7 +188,7 @@ body {
       bottom: 0;
       z-index: 2;
       
-      -moz-animation:move-background 70s linear infinite;
+    -moz-animation:move-background 70s linear infinite;
     -ms-animation:move-background 70s linear infinite;
     -o-animation:move-background 70s linear infinite;
     -webkit-animation:move-background 70s linear infinite;
@@ -209,7 +207,7 @@ body {
       bottom: 0;
       z-index: 3;
   
-     -moz-animation:move-background 150s linear infinite;
+    -moz-animation:move-background 150s linear infinite;
     -ms-animation:move-background 150s linear infinite;
     -o-animation:move-background 150s linear infinite;
     -webkit-animation:move-background 150s linear infinite;
