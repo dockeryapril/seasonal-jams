@@ -10,7 +10,7 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 // Song titles
-const songs = ['Carte Blanche | Tickwanya','Haute Couture','El Reto | JP Castillo','I Still Wonder','Makin Love','One Night','Aiwokudasai | Gregory Stutzer','Where I Belong','Kryptonite','Pull Up | Danielle C'];
+const songs = ['Carte Blanche | Tickwanya','Haute Couture | Jennah Bell','El Reto | JP Castillo','I Still Wonder | Kolektivo','Makin Love','One Night','Aiwokudasai | Gregory Stutzer','Where I Belong','Kryptonite','Pull Up | Danielle C'];
 
 // Keep track of song
 let songIndex = 1;
